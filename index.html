@@ -1,0 +1,3119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Shashwat &amp; Manya — Wedding Invitation</title>
+  <script>document.documentElement.className += ' js';</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Great+Vibes&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fff8f3;
+      --bg2: #fdeaee;
+      --ink: #4a3540;
+      --muted: #86707b;
+      --card: rgba(255, 255, 255, .74);
+      --card-solid: #fffdfb;
+      --line: rgba(201, 154, 91, .4);
+      --gold: #c99a5b;
+      --gold2: #e8c98f;
+      --rose: #f5b8c4;
+      --peach: #ffd5b8;
+      --sage: #b9d6c1;
+      --leaf: #a3c8ae;
+      --lav: #d8cbef;
+      --butter: #fbe8a3;
+      --sky: #c9e3f2;
+      --shadow: 0 18px 40px -18px rgba(150, 90, 110, .38);
+      --door1: #fbd9df;
+      --door2: #fff0e4;
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #241b28;
+      --bg2: #30233a;
+      --ink: #f8ebf1;
+      --muted: #cbb5c1;
+      --card: rgba(60, 45, 68, .72);
+      --card-solid: #3a2c42;
+      --line: rgba(232, 201, 143, .35);
+      --gold: #e6bd82;
+      --gold2: #a9803f;
+      --leaf: #7fa98c;
+      --shadow: 0 18px 40px -18px rgba(0, 0, 0, .6);
+      --door1: #3b2a45;
+      --door2: #2a2030;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit
+    }
+
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden
+    }
+
+    /* Hide scrollbars for the whole site while preserving scrolling */
+    html,
+    body,
+    * {
+      scrollbar-width: none !important;
+      /* Firefox */
+      -ms-overflow-style: none !important;
+      /* IE and Edge */
+    }
+
+    *::-webkit-scrollbar,
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+      background: transparent !important;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 64px)
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      font-weight: 300;
+      line-height: 1.65;
+      position: relative
+    }
+
+    body.locked {
+      overflow: hidden
+    }
+
+    img,
+    svg {
+      max-width: 100%
+    }
+
+    a {
+      color: inherit
+    }
+
+    .script {
+      font-family: 'Great Vibes', 'Snell Roundhand', 'Brush Script MT', cursive;
+      font-weight: 400
+    }
+
+    .serif {
+      font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif
+    }
+
+    /* ---------- Gate (opening doors) ---------- */
+    .gate {
+      display: none
+    }
+
+    .js .gate {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: grid;
+      place-items: center;
+      padding: env(safe-area-inset-top, 0px) 1rem env(safe-area-inset-bottom, 0px);
+      overflow: hidden
+    }
+
+    .gate.gone {
+      display: none
+    }
+
+    .door {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 50.3%;
+      z-index: 1;
+      transition: transform 1.6s cubic-bezier(.77, 0, .18, 1);
+      background: radial-gradient(circle, rgba(201, 154, 91, .3) 1.5px, transparent 2px) 0 0/22px 22px, linear-gradient(160deg, var(--door1), var(--door2))
+    }
+
+    .door.l {
+      left: 0;
+      border-right: 2px solid var(--gold)
+    }
+
+    .door.r {
+      right: 0;
+      border-left: 2px solid var(--gold)
+    }
+
+    .door::after {
+      content: "";
+      position: absolute;
+      top: 7%;
+      bottom: 7%;
+      border: 1.5px solid var(--gold);
+      opacity: .7
+    }
+
+    .door.l::after {
+      left: 8%;
+      right: 0;
+      border-right: 0;
+      border-top-left-radius: 100% 40%
+    }
+
+    .door.r::after {
+      right: 8%;
+      left: 0;
+      border-left: 0;
+      border-top-right-radius: 100% 40%
+    }
+
+    .gate.open .door.l {
+      transform: translateX(-101%)
+    }
+
+    .gate.open .door.r {
+      transform: translateX(101%)
+    }
+
+    .gate-center {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      transition: opacity .7s ease, transform .9s ease;
+      max-width: 520px
+    }
+
+    .gate.open .gate-center {
+      opacity: 0;
+      transform: scale(1.12);
+      pointer-events: none
+    }
+
+    .gate .diya {
+      width: 84px;
+      margin: 0 auto .2rem;
+      display: block;
+      overflow: visible
+    }
+
+    .gate .glow {
+      position: absolute;
+      left: 50%;
+      top: -6px;
+      width: 220px;
+      height: 220px;
+      translate: -50% 0;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 200, 120, .55), transparent 65%);
+      animation: pulse 3s ease-in-out infinite;
+      z-index: -1
+    }
+
+    .gate .invoke {
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      color: var(--gold);
+      margin: .3rem 0
+    }
+
+    .gate h1 {
+      font-size: clamp(3rem, 12vw, 5rem);
+      line-height: 1.05;
+      margin: .2rem 0 .5rem;
+      font-weight: 400
+    }
+
+    .gate p {
+      margin: 0 0 1.4rem;
+      color: var(--muted)
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      font: 500 .82rem/1 'Jost', system-ui, sans-serif;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: 1.05rem 1.9rem;
+      border-radius: 999px;
+      color: #fff;
+      background: linear-gradient(135deg, #d9a866, #c48a4c);
+      box-shadow: 0 12px 26px -10px rgba(196, 138, 76, .7);
+      transition: transform .25s ease, box-shadow .25s ease
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 30px -10px rgba(196, 138, 76, .75)
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 1.5px solid var(--gold);
+      box-shadow: none
+    }
+
+    .btn.pulse {
+      animation: btnpulse 2.4s ease-in-out infinite
+    }
+
+    .btn svg {
+      width: 18px;
+      height: 18px
+    }
+
+    /* ---------- Corners of flowers ---------- */
+    .corner {
+      position: absolute;
+      width: clamp(130px, 30vw, 290px);
+      aspect-ratio: 1;
+      pointer-events: none;
+      z-index: 1
+    }
+
+    .corner .art {
+      width: 100%;
+      height: 100%;
+      display: block;
+      transform-origin: 0 0;
+      animation: sway 8s ease-in-out infinite alternate
+    }
+
+    .corner.tl {
+      top: 0;
+      left: 0
+    }
+
+    .corner.tr {
+      top: 0;
+      right: 0;
+      transform: scaleX(-1)
+    }
+
+    .corner.bl {
+      bottom: 0;
+      left: 0;
+      transform: scaleY(-1)
+    }
+
+    .corner.br {
+      bottom: 0;
+      right: 0;
+      transform: scale(-1, -1)
+    }
+
+    @media (max-width: 600px) {
+
+      .hero .corner.tl,
+      .hero .corner.tr {
+        width: clamp(80px, 22vw, 110px);
+        opacity: 0.55;
+      }
+    }
+
+    /* ---------- Nav ---------- */
+    .nav {
+      position: sticky;
+      top: env(safe-area-inset-top, 0px);
+      z-index: 40;
+      display: flex;
+      gap: .25rem;
+      padding: .6rem .8rem;
+      max-width: 100vw;
+      overflow-x: auto;
+      scrollbar-width: none;
+      background: var(--bg);
+      background: color-mix(in srgb, var(--bg) 80%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line)
+    }
+
+    .nav::-webkit-scrollbar {
+      display: none
+    }
+
+    @media (min-width: 600px) {
+      .nav>:first-child {
+        margin-left: auto
+      }
+
+      .nav>:last-child {
+        margin-right: auto
+      }
+    }
+
+    .nav a,
+    .nav button {
+      flex: none;
+      white-space: nowrap;
+      padding: .45rem .95rem;
+      border-radius: 999px;
+      color: var(--ink);
+      text-decoration: none;
+      font: 400 .78rem/1.2 'Jost', system-ui, sans-serif;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      transition: background .25s
+    }
+
+    .nav a:hover,
+    .nav button:hover {
+      background: var(--rose);
+      color: #4a3540
+    }
+
+    .nav a.cta {
+      background: var(--gold);
+      color: #fff
+    }
+
+    @media (max-width: 600px) {
+
+      .nav a.cta {
+        display: none
+      }
+    }
+
+    /* ---------- Layout ---------- */
+    section {
+      position: relative;
+      padding: 5.5rem 1.25rem;
+      overflow: hidden
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 2;
+      max-width: 1040px;
+      margin: 0 auto
+    }
+
+    .eyebrow {
+      letter-spacing: .34em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      color: var(--gold);
+      margin: 0
+    }
+
+    h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      line-height: 1.1;
+      margin: .3rem 0 .8rem
+    }
+
+    h2 .script {
+      font-size: 1.25em;
+      color: var(--gold)
+    }
+
+    .center {
+      text-align: center
+    }
+
+    .lead {
+      max-width: 620px;
+      margin: 0 auto 2.6rem;
+      color: var(--muted);
+      font-size: 1.05rem
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 1rem auto 2rem;
+      max-width: 340px
+    }
+
+    .divider span {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold))
+    }
+
+    .divider span:last-child {
+      background: linear-gradient(270deg, transparent, var(--gold))
+    }
+
+    .divider svg {
+      width: 34px;
+      height: 34px;
+      animation: spin 18s linear infinite
+    }
+
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .9s ease, transform .9s ease;
+      transition-delay: var(--d, 0s)
+    }
+
+    .js .reveal.in {
+      opacity: 1;
+      transform: none
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      min-height: calc(100svh - 56px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4.2rem 1.2rem 3rem;
+      background: radial-gradient(120% 90% at 50% 0%, var(--bg2), var(--bg));
+      position: relative;
+      overflow: hidden
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 4.5rem 1rem 3rem
+      }
+    }
+
+    @media (min-width: 900px) {
+      .hero {
+        padding: 1.5rem 1.2rem 3rem
+      }
+    }
+
+    .hero .mandala {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(130vw, 920px);
+      aspect-ratio: 1;
+      translate: -50% -50%;
+      color: var(--gold);
+      opacity: .16;
+      animation: spin 160s linear infinite;
+      pointer-events: none
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(55px);
+      opacity: .55;
+      pointer-events: none;
+      animation: floaty 14s ease-in-out infinite alternate
+    }
+
+    .blob.a {
+      width: 280px;
+      height: 280px;
+      background: var(--rose);
+      left: -60px;
+      top: 22%
+    }
+
+    .blob.b {
+      width: 260px;
+      height: 260px;
+      background: var(--lav);
+      right: -60px;
+      top: 48%;
+      animation-delay: -5s
+    }
+
+    .blob.c {
+      width: 220px;
+      height: 220px;
+      background: var(--butter);
+      left: 38%;
+      bottom: -70px;
+      animation-delay: -9s
+    }
+
+    .hero .inner {
+      position: relative;
+      z-index: 3;
+      max-width: 760px
+    }
+
+    .om-top {
+      display: inline-block;
+      font-size: 1.8rem;
+      line-height: 1;
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      filter: drop-shadow(0 0 6px rgba(201, 154, 91, .4));
+      margin-bottom: .25rem;
+    }
+
+    .hero .invoke {
+      letter-spacing: .34em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      color: var(--gold);
+      margin: 0 0 .5rem
+    }
+
+    .hero .with {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--muted);
+      margin: 0
+    }
+
+    .names {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: baseline;
+      gap: 0 .3em;
+      margin: .2rem 0 .2rem;
+      font-size: clamp(3.4rem, 13vw, 7rem);
+      line-height: 1.28;
+      padding: .1em 0
+    }
+
+    .names span {
+      display: inline-block;
+      padding: .15em .08em;
+      margin: -.15em -.08em;
+      background: linear-gradient(100deg, #b98545 0%, #e9c688 30%, #b98545 55%, #e9c688 80%);
+      background-size: 220% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: var(--gold);
+      animation: shimmer 7s linear infinite
+    }
+
+    .names .amp {
+      font-size: .62em
+    }
+
+    .fullnames {
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      font-size: .72rem;
+      color: var(--muted);
+      margin: 0 0 1rem
+    }
+
+    .om-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .9rem;
+      margin: 0 auto 1.1rem;
+      max-width: 220px
+    }
+
+    .om-divider span {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold))
+    }
+
+    .om-divider span:last-child {
+      background: linear-gradient(270deg, transparent, var(--gold))
+    }
+
+    .om-divider b {
+      font-size: 1.45rem;
+      line-height: 1;
+      color: var(--gold);
+      font-family: 'Cormorant Garamond', serif;
+      display: inline-block;
+      padding: 0 .2rem;
+      filter: drop-shadow(0 0 6px rgba(201, 154, 91, .4))
+    }
+
+    .hero .msg {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.25rem, 3.4vw, 1.6rem);
+      line-height: 1.5;
+      margin: 0 auto 1.6rem;
+      max-width: 560px
+    }
+
+    .datebox {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: .9rem 1.8rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card);
+      backdrop-filter: blur(6px);
+      box-shadow: var(--shadow);
+      margin-bottom: .6rem
+    }
+
+    .datebox b {
+      font: 500 clamp(1.7rem, 5vw, 2.4rem)/1 'Cormorant Garamond', Georgia, serif;
+      color: var(--gold);
+      position: relative;
+    }
+
+    .datebox b sup {
+      font-size: 0.44em;
+      top: -0.35em;
+      margin-left: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 500;
+      letter-spacing: normal;
+      vertical-align: top;
+      position: relative;
+    }
+
+    .datebox small {
+      display: block;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      font-size: .66rem;
+      color: var(--muted)
+    }
+
+    .hero .place {
+      margin: .4rem 0 1.6rem;
+      color: var(--muted)
+    }
+
+    .count {
+      display: flex;
+      justify-content: center;
+      gap: .7rem;
+      margin: 0 0 2rem;
+      flex-wrap: wrap
+    }
+
+    .count div {
+      min-width: 72px;
+      padding: .7rem .4rem;
+      border-radius: 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow)
+    }
+
+    .count b {
+      display: block;
+      font: 500 1.9rem/1 'Cormorant Garamond', Georgia, serif
+    }
+
+    .count span {
+      font-size: .62rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .celebrate {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin: 0
+    }
+
+    .hero .actions {
+      display: flex;
+      gap: .8rem;
+      justify-content: center;
+      flex-wrap: wrap
+    }
+
+    .scrollcue {
+      display: none
+    }
+
+    .js .rise {
+      opacity: 0;
+      transform: translateY(22px)
+    }
+
+    body.go .rise {
+      animation: rise 1s cubic-bezier(.2, .8, .2, 1) both;
+      animation-delay: calc(.5s + var(--i, 0)*.14s)
+    }
+
+    /* ---------- Events ---------- */
+    #events {
+      background: linear-gradient(180deg, var(--bg), var(--bg2))
+    }
+
+    .day {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      justify-content: center;
+      margin: 0 0 1.6rem;
+      flex-wrap: wrap
+    }
+
+    .day .num {
+      font: 500 3.4rem/1 'Cormorant Garamond', Georgia, serif;
+      color: var(--gold);
+      position: relative;
+    }
+
+    .day .num sup {
+      font-size: 0.42em;
+      top: -0.4em;
+      margin-left: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 500;
+      letter-spacing: normal;
+      vertical-align: top;
+      position: relative;
+    }
+
+    .day .meta {
+      text-align: left;
+      line-height: 1.3
+    }
+
+    .day .meta small {
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      font-size: .7rem;
+      color: var(--muted);
+      display: block
+    }
+
+    .day .meta strong {
+      font: 500 1.35rem 'Cormorant Garamond', Georgia, serif
+    }
+
+    .day em {
+      flex-basis: 100%;
+      text-align: center;
+      color: var(--muted);
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.1rem
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.3rem;
+      margin-bottom: 4rem
+    }
+
+    .flip {
+      perspective: 1100px;
+      height: 320px;
+      cursor: pointer;
+      outline: none;
+      border-radius: 26px
+    }
+
+    .flip:focus-visible {
+      box-shadow: 0 0 0 3px var(--gold)
+    }
+
+    .flip .in2 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform .85s cubic-bezier(.2, .8, .2, 1);
+      transform-style: preserve-3d
+    }
+
+    .flip.on .in2 {
+      transform: rotateY(180deg)
+    }
+
+    .face {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      text-align: center;
+      padding: 1.6rem 1.3rem;
+      border-radius: 26px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transform: rotateX(0deg);
+      -webkit-transform: rotateX(0deg);
+      color: #4a3540;
+      background: linear-gradient(160deg, var(--c1), var(--c2))
+    }
+
+    .face.back {
+      transform: rotateY(180deg);
+      background: linear-gradient(160deg, var(--c2), var(--c1))
+    }
+
+    .face .ico {
+      width: 74px;
+      height: 74px
+    }
+
+    .face h3 {
+      margin: 0;
+      font: 500 1.9rem/1.1 'Cormorant Garamond', Georgia, serif
+    }
+
+    .face p {
+      margin: 0;
+      font-size: .95rem;
+      line-height: 1.5
+    }
+
+    .face .hint {
+      font-size: .62rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      opacity: .65;
+      margin-top: .4rem
+    }
+
+    .face .k {
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      font-size: .66rem;
+      opacity: .7
+    }
+
+    .haldi {
+      --c1: #fff3bd;
+      --c2: #ffe08c
+    }
+
+    .mehndi {
+      --c1: #d9ecdc;
+      --c2: #b7d6bf
+    }
+
+    .sangeet {
+      --c1: #e7ddf8;
+      --c2: #d0c0ee
+    }
+
+    .vivah {
+      position: relative;
+      max-width: 760px;
+      margin: 0 auto;
+      perspective: 1200px;
+      -webkit-perspective: 1200px;
+      cursor: pointer;
+      outline: none;
+      border-radius: 34px;
+    }
+
+    .vivah:focus-visible {
+      box-shadow: 0 0 0 3px var(--gold);
+    }
+
+    .vivah-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      transition: transform .85s cubic-bezier(.2, .8, .2, 1);
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      border-radius: 34px;
+    }
+
+    .vivah.on .vivah-inner {
+      transform: rotateY(180deg);
+    }
+
+    .vivah-face {
+      position: relative;
+      inset: 0;
+      width: 100%;
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.6rem 2.6rem;
+      text-align: center;
+      border-radius: 34px;
+      background: linear-gradient(160deg, var(--card), var(--card));
+      border: 1.5px solid var(--gold);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      transform: rotateX(0deg);
+      -webkit-transform: rotateX(0deg);
+    }
+
+    .vivah-face.back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+    }
+
+    .vivah-face::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px dashed var(--line);
+      border-radius: 28px;
+      pointer-events: none;
+    }
+
+    .wedding-schedule {
+      list-style: none;
+      padding: 0;
+      margin: 1.4rem auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .wedding-schedule li {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0 0.4rem 0.45rem;
+      border-bottom: 1px dashed rgba(201, 154, 91, 0.4);
+    }
+
+    .wedding-schedule .time {
+      font-weight: 500;
+      font-size: 0.88rem;
+      color: var(--gold);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .wedding-schedule .event-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-align: right;
+      line-height: 1.2;
+    }
+
+    @media (max-width: 600px) {
+      .wedding-schedule {
+        margin: 1rem auto 0;
+        gap: 0.85rem;
+      }
+
+      .wedding-schedule li {
+        padding: 0 0.2rem 0.35rem;
+        gap: 0.6rem;
+      }
+
+      .wedding-schedule .time {
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
+      }
+
+      .wedding-schedule .event-name {
+        font-size: 1.08rem;
+      }
+    }
+
+    .vivah .corner {
+      width: clamp(90px, 20vw, 150px)
+    }
+
+    .vivah .ico {
+      width: 86px;
+      height: 86px;
+      margin: 0 auto
+    }
+
+    .vivah .hast-melap-img {
+      width: clamp(140px, 32vw, 190px);
+      height: auto;
+      margin: 0.2rem auto 0.4rem;
+      display: block;
+      filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.12));
+      position: relative;
+      z-index: 2;
+    }
+
+    .vivah h3 {
+      margin: .2rem 0 0;
+      font-size: clamp(2.6rem, 8vw, 4rem);
+      color: var(--gold);
+      line-height: 1.1
+    }
+
+    .vivah p {
+      position: relative;
+      z-index: 2;
+      max-width: 520px;
+      margin: .6rem auto 0
+    }
+
+    .vivah .day {
+      margin-top: .6rem
+    }
+
+    /* ---------- Venue ---------- */
+    #venue {
+      background: var(--bg)
+    }
+
+    .venue {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.4rem;
+      align-items: center
+    }
+
+    .venue-art {
+      width: 100%;
+      height: auto;
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--line)
+    }
+
+    .venue-art .sun {
+      animation: pulse 5s ease-in-out infinite;
+      transform-origin: 200px 130px
+    }
+
+    .venue-art .garland {
+      animation: swing 5s ease-in-out infinite alternate;
+      transform-origin: 200px 122px
+    }
+
+    .venue h2 {
+      margin-top: .2rem
+    }
+
+    .venue address {
+      font-style: normal;
+      font-size: 1.15rem;
+      margin: 0 0 1.4rem
+    }
+
+    .venue address strong {
+      display: block;
+      font: 500 1.7rem 'Cormorant Garamond', Georgia, serif
+    }
+
+    .venue .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem
+    }
+
+    @media (max-width:760px) {
+      .venue {
+        grid-template-columns: 1fr;
+        text-align: center
+      }
+
+      .venue .actions {
+        justify-content: center
+      }
+
+      .venue .day {
+        justify-content: center !important
+      }
+    }
+
+    #reception {
+      background: var(--bg)
+    }
+
+    #reception .venue {
+      direction: rtl
+    }
+
+    #reception .venue>* {
+      direction: ltr
+    }
+
+    @media (max-width:760px) {
+      #reception .venue {
+        direction: ltr
+      }
+    }
+
+    /* ---------- Reach ---------- */
+    #reach {
+      background: linear-gradient(180deg, var(--bg), var(--bg2))
+    }
+
+    .chips {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem
+    }
+
+    .chip {
+      padding: 1.1rem 1.2rem;
+      border-radius: 20px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      text-align: center
+    }
+
+    .chip small {
+      display: block;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      font-size: .64rem;
+      color: var(--muted)
+    }
+
+    .chip b {
+      font: 500 1.5rem/1.3 'Cormorant Garamond', Georgia, serif
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: .5rem;
+      margin-bottom: 1.2rem;
+      flex-wrap: wrap
+    }
+
+    .tabs button {
+      cursor: pointer;
+      padding: .7rem 1.4rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--line);
+      background: var(--card);
+      color: var(--ink);
+      font: 400 .78rem/1 'Jost', system-ui, sans-serif;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      transition: all .25s
+    }
+
+    .tabs button[aria-selected="true"] {
+      background: var(--gold);
+      color: #fff;
+      border-color: var(--gold)
+    }
+
+    .mapbox {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 1rem
+    }
+
+    .route {
+      width: 100%;
+      height: auto;
+      display: block
+    }
+
+    .route text {
+      font-family: 'Jost', system-ui, sans-serif;
+      fill: var(--ink)
+    }
+
+    .route .pathmain {
+      fill: none;
+      stroke: var(--gold);
+      stroke-width: 3;
+      stroke-dasharray: 2 10;
+      stroke-linecap: round;
+      animation: march 1.4s linear infinite
+    }
+
+    .route .pathalt {
+      fill: none;
+      stroke: var(--muted);
+      stroke-width: 1.5;
+      stroke-dasharray: 4 8;
+      opacity: .55
+    }
+
+    .route [data-g] {
+      display: none
+    }
+
+    .route[data-mode="air"] [data-g="air"],
+    .route[data-mode="train"] [data-g="train"],
+    .route[data-mode="road"] [data-g="road"] {
+      display: inline
+    }
+
+    .panel {
+      padding: 1.1rem .6rem .4rem;
+      text-align: center
+    }
+
+    .panel h3 {
+      margin: 0 0 .3rem;
+      font: 500 1.7rem 'Cormorant Garamond', Georgia, serif
+    }
+
+    .panel p {
+      margin: 0 auto;
+      max-width: 640px;
+      color: var(--muted)
+    }
+
+    .panel p b {
+      color: var(--ink);
+      font-weight: 500
+    }
+
+    /* ---------- RSVP ---------- */
+    #rsvp {
+      background: radial-gradient(120% 100% at 50% 100%, var(--bg2), var(--bg))
+    }
+
+    .rsvp {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3.2rem 1.6rem;
+      text-align: center;
+      border-radius: 34px;
+      background: var(--card);
+      border: 1.5px solid var(--gold);
+      box-shadow: var(--shadow);
+      overflow: hidden
+    }
+
+    .rsvp .env {
+      width: 118px;
+      margin: 0 auto 1rem;
+      display: block;
+      animation: floaty 5s ease-in-out infinite alternate
+    }
+
+    .rsvp .corner {
+      width: clamp(90px, 20vw, 150px)
+    }
+
+    .rsvp p {
+      position: relative;
+      z-index: 2;
+      margin: 0 auto 1.6rem;
+      max-width: 480px;
+      color: var(--muted)
+    }
+
+    .rsvp .btn {
+      position: relative;
+      z-index: 2
+    }
+
+    footer {
+      position: relative;
+      text-align: center;
+      padding: 3.5rem 1.2rem calc(6rem + env(safe-area-inset-bottom, 0px));
+      background: var(--bg2);
+      overflow: hidden
+    }
+
+    footer .names {
+      font-size: clamp(2.6rem, 9vw, 4.5rem);
+      margin: 0
+    }
+
+    footer p {
+      margin: .4rem 0;
+      color: var(--muted)
+    }
+
+    /* ---------- Floating Fun Activity Button + petals ---------- */
+    .fab {
+      position: fixed;
+      right: 1rem;
+      bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+      z-index: 45;
+      padding: 1.05rem 1.9rem;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: opacity .6s ease, transform .6s ease, visibility .6s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #d9a866, #c48a4c);
+      color: #fff;
+      border: 0;
+      border-radius: 999px;
+      box-shadow: 0 12px 26px -10px rgba(196, 138, 76, .7);
+      cursor: pointer;
+      font: 500 .82rem/1 'Jost', system-ui, sans-serif;
+      letter-spacing: .2em;
+      text-transform: uppercase
+    }
+
+    .fab:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 30px -10px rgba(196, 138, 76, .75)
+    }
+
+    .fab svg {
+      width: 20px;
+      height: 20px
+    }
+
+    .fab.visible {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: none;
+    }
+
+    /* ---------- Water Fun Section as Full-Screen Separate View Modal ---------- */
+    #waterfun-view {
+      position: fixed;
+      inset: 0;
+      z-index: 99990;
+      background: radial-gradient(circle at 50% 15%, #67e8f9 0%, #0284c7 55%, #0c4a6e 100%);
+      color: #fff;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 2rem 1.25rem 4rem;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: scale(0.96);
+      transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1), transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #water-bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 99995;
+    }
+
+    #waterfun-view.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: scale(1);
+    }
+
+    .wf-close-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 980px;
+      margin: 0 auto 1.5rem;
+      padding: 0.6rem 0;
+    }
+
+    .wf-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #0284c7;
+      color: #fff;
+      border: 2px solid #fff;
+      font: 700 0.88rem/1 'Jost', system-ui, sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.45rem;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.25s;
+    }
+
+    .wf-back-btn:hover {
+      background: #fff;
+      color: #0284c7;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    }
+    }
+
+    .water-badge {
+      display: inline-block;
+      background: #fbbf24;
+      color: #78350f;
+      padding: .4rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: .85rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      box-shadow: 0 6px 14px rgba(251, 191, 36, .4);
+      margin-bottom: .8rem;
+      transform: rotate(-2deg)
+    }
+
+    .water-title {
+      color: #fff;
+      font-size: clamp(2.5rem, 8vw, 4.2rem);
+      text-shadow: 3px 3px 0 #0284c7, 6px 6px 0 rgba(12, 74, 110, 0.6);
+      margin: .2rem 0 .6rem
+    }
+
+    .water-card {
+      background: rgba(255, 255, 255, .94);
+      border-radius: 32px;
+      padding: 2.2rem 1.6rem;
+      color: #0f172a;
+      box-shadow: 0 24px 45px -12px rgba(12, 74, 110, .5);
+      border: 4px solid #fff;
+      text-align: center;
+      margin: 0 auto 2.5rem;
+      max-width: 880px
+    }
+
+    .water-park-art {
+      width: 100%;
+      max-width: 480px;
+      height: auto;
+      margin: 0 auto 1.4rem;
+      display: block;
+      filter: drop-shadow(0 10px 18px rgba(2, 132, 199, .2))
+    }
+
+    .water-details {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin: 1.4rem 0
+    }
+
+    .water-pill {
+      background: #f0f9ff;
+      border: 2px dashed #38bdf8;
+      border-radius: 18px;
+      padding: .85rem 1.4rem;
+      min-width: 170px
+    }
+
+    .water-pill strong {
+      display: block;
+      font-size: 1.15rem;
+      color: #0284c7;
+      font-weight: 600
+    }
+
+    .water-pill span {
+      font-size: .85rem;
+      color: #64748b
+    }
+
+    .act-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.3rem;
+      margin-bottom: 2rem
+    }
+
+    .act-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 1.8rem 1.3rem;
+      text-align: center;
+      color: #0f172a;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, .15);
+      border: 2px solid transparent;
+      transition: all .3s cubic-bezier(.34, 1.56, .64, 1)
+    }
+
+    .act-card:hover {
+      transform: translateY(-6px) rotate(-1deg);
+      border-color: #38bdf8;
+      box-shadow: 0 18px 30px rgba(2, 132, 199, .3)
+    }
+
+    .act-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem
+    }
+
+    .c-blue .act-icon {
+      background: #e0f2fe
+    }
+
+    .c-yellow .act-icon {
+      background: #fef3c7
+    }
+
+    .c-coral .act-icon {
+      background: #ffe4e6
+    }
+
+    .c-green .act-icon {
+      background: #dcfce7
+    }
+
+    .act-card h3 {
+      font: 600 1.35rem/1.2 'Jost', system-ui, sans-serif;
+      margin-bottom: .4rem;
+      color: #0c4a6e
+    }
+
+    .act-card p {
+      font-size: .9rem;
+      color: #475569;
+      line-height: 1.5;
+      margin: 0
+    }
+
+    .pool-rules {
+      background: linear-gradient(135deg, #fef08a 0%, #fde047 100%);
+      border-radius: 26px;
+      padding: 1.4rem 1.8rem;
+      color: #713f12;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, .2);
+      border: 3px dashed #ca8a04;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      gap: 1.2rem;
+      margin-top: 1.5rem
+    }
+
+    .pool-rule {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      font-size: .95rem;
+      font-weight: 600
+    }
+
+    .pool-rule span {
+      font-size: 1.7rem
+    }
+
+    /* ---------- Opening Water Splash Overlay Animation ---------- */
+    #water-splash-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: #0284c7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: opacity .65s cubic-bezier(.4, 0, .2, 1), transform .65s cubic-bezier(.4, 0, .2, 1);
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transform: scale(1.08);
+    }
+
+    #water-splash-overlay.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: scale(1);
+    }
+
+    .splash-wave {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200%;
+      height: 45vh;
+      fill: #38bdf8;
+      animation: splashWaveRoll 8s linear infinite;
+      opacity: .85;
+      will-change: transform;
+    }
+
+    .splash-wave.w2 {
+      bottom: -15px;
+      fill: #0ea5e9;
+      opacity: .75;
+      animation: splashWaveRoll 6s linear infinite reverse;
+    }
+
+    .splash-wave.w3 {
+      bottom: -25px;
+      fill: #0284c7;
+      opacity: .9;
+      animation: splashWaveRoll 11s linear infinite;
+    }
+
+    .splash-char {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      animation: splashBounceDrop 1.1s cubic-bezier(.34, 1.56, .64, 1) forwards
+    }
+
+    .splash-tube {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 1.2rem;
+      animation: splashTubeWiggle 2s ease-in-out infinite alternate;
+      filter: drop-shadow(0 14px 24px rgba(0, 0, 0, .3))
+    }
+
+    .splash-heading {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(3.2rem, 11vw, 5.5rem);
+      font-weight: 400;
+      color: #fff;
+      text-shadow: 3px 3px 0 #0369a1, -2px -2px 0 #38bdf8, 0 12px 24px rgba(0, 0, 0, .4);
+      line-height: 1;
+      margin: 0
+    }
+
+    .splash-subtext {
+      font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+      font-weight: 600;
+      color: #fef08a;
+      text-shadow: 2px 2px 0 #0284c7;
+      margin-top: .4rem;
+      letter-spacing: .08em;
+      text-transform: uppercase
+    }
+
+    .drops-cluster {
+      position: absolute;
+      inset: 0;
+      pointer-events: none
+    }
+
+    .water-drop {
+      position: absolute;
+      width: 18px;
+      height: 26px;
+      background: #e0f2fe;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      animation: dropBurst 1.2s ease-out forwards
+    }
+
+    @keyframes splashWaveRoll {
+      0% {
+        transform: translateX(0)
+      }
+
+      100% {
+        transform: translateX(-50%)
+      }
+    }
+
+    @keyframes splashTubeWiggle {
+      0% {
+        transform: rotate(-6deg) scale(1)
+      }
+
+      100% {
+        transform: rotate(6deg) scale(1.06)
+      }
+    }
+
+    @keyframes splashBounceDrop {
+      0% {
+        transform: translateY(-140px) scale(.3);
+        opacity: 0
+      }
+
+      65% {
+        transform: translateY(12px) scale(1.1);
+        opacity: 1
+      }
+
+      85% {
+        transform: translateY(-6px) scale(.96)
+      }
+
+      100% {
+        transform: translateY(0) scale(1)
+      }
+    }
+
+    @keyframes dropBurst {
+      0% {
+        transform: translate(0, 0) scale(0);
+        opacity: 1
+      }
+
+      100% {
+        transform: translate(var(--tx), var(--ty)) scale(1.2);
+        opacity: 0
+      }
+    }
+
+    #petals {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 30
+    }
+
+    /* ---------- Keyframes ---------- */
+    @keyframes spin {
+      to {
+        rotate: 360deg
+      }
+    }
+
+    @keyframes sway {
+      from {
+        transform: rotate(-2.2deg)
+      }
+
+      to {
+        transform: rotate(2.6deg)
+      }
+    }
+
+    @keyframes floaty {
+      from {
+        transform: translate(0, 0)
+      }
+
+      to {
+        transform: translate(18px, -22px)
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: .7;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.08)
+      }
+    }
+
+    @keyframes btnpulse {
+
+      0%,
+      100% {
+        box-shadow: 0 12px 26px -10px rgba(196, 138, 76, .7), 0 0 0 0 rgba(217, 168, 102, .5)
+      }
+
+      50% {
+        box-shadow: 0 12px 26px -10px rgba(196, 138, 76, .7), 0 0 0 14px rgba(217, 168, 102, 0)
+      }
+    }
+
+    @keyframes shimmer {
+      to {
+        background-position: 220% 0
+      }
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(22px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    @keyframes cue {
+      0% {
+        opacity: 0;
+        transform: translateY(0)
+      }
+
+      40% {
+        opacity: 1
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(16px)
+      }
+    }
+
+    @keyframes march {
+      to {
+        stroke-dashoffset: -24
+      }
+    }
+
+    @keyframes swing {
+      from {
+        transform: rotate(-1.6deg)
+      }
+
+      to {
+        transform: rotate(1.6deg)
+      }
+    }
+
+    @keyframes flick {
+      from {
+        transform: scale(1, 1) rotate(-2deg)
+      }
+
+      to {
+        transform: scale(.92, 1.1) rotate(2deg)
+      }
+    }
+
+    .flame {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: flick .9s ease-in-out infinite alternate
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important
+      }
+
+      .js .rise,
+      .js .reveal {
+        opacity: 1 !important;
+        transform: none !important
+      }
+    }
+
+    /* Family Section Styling */
+    .family-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      max-width: 820px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (min-width: 680px) {
+      .family-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .family-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.8rem 1.2rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      transition: transform .3s ease, box-shadow .3s ease;
+      position: relative;
+    }
+
+    .family-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+    }
+
+    .family-card .badge {
+      display: inline-block;
+      font-size: .8rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+
+    .family-shots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.2rem;
+    }
+
+    .shot-circle {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      border: 3px solid var(--gold);
+      padding: 3px;
+      background: #fff;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .shot-circle img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .shot-circle .ph-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fde4e4, #fed7aa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--rose);
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .family-card h3 {
+      font-size: 1.12rem;
+      margin: 0.2rem 0;
+      color: var(--text);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .family-card .relation {
+      font-size: 0.88rem;
+      color: var(--rose);
+      font-style: italic;
+      margin-top: 0.35rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Shared SVG art -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="flower" viewBox="-50 -50 100 100">
+        <g fill="currentColor" stroke="rgba(255,255,255,.55)" stroke-width="1">
+          <ellipse cx="0" cy="-27" rx="12" ry="22" />
+          <ellipse cx="0" cy="-27" rx="12" ry="22" transform="rotate(45)" />
+          <ellipse cx="0" cy="-27" rx="12" ry="22" transform="rotate(90)" />
+          <ellipse cx="0" cy="-27" rx="12" ry="22" transform="rotate(135)" />
+          <ellipse cx="0" cy="-27" rx="12" ry="22" transform="rotate(180)" />
+          <ellipse cx="0" cy="-27" rx="12" ry="22" transform="rotate(225)" />
+          <ellipse cx="0" cy="-27" rx="12" ry="22" transform="rotate(270)" />
+          <ellipse cx="0" cy="-27" rx="12" ry="22" transform="rotate(315)" />
+        </g>
+        <g fill="#fff" opacity=".35">
+          <ellipse cx="0" cy="-31" rx="4.5" ry="12" />
+          <ellipse cx="0" cy="-31" rx="4.5" ry="12" transform="rotate(45)" />
+          <ellipse cx="0" cy="-31" rx="4.5" ry="12" transform="rotate(90)" />
+          <ellipse cx="0" cy="-31" rx="4.5" ry="12" transform="rotate(135)" />
+          <ellipse cx="0" cy="-31" rx="4.5" ry="12" transform="rotate(180)" />
+          <ellipse cx="0" cy="-31" rx="4.5" ry="12" transform="rotate(225)" />
+          <ellipse cx="0" cy="-31" rx="4.5" ry="12" transform="rotate(270)" />
+          <ellipse cx="0" cy="-31" rx="4.5" ry="12" transform="rotate(315)" />
+        </g>
+        <circle r="10" style="fill:var(--gold)" />
+        <circle r="4.5" fill="#fff" opacity=".65" />
+      </symbol>
+      <symbol id="leaf" viewBox="0 0 40 80">
+        <path d="M20 78C-6 50-2 16 20 2c22 14 26 48 0 76z" fill="currentColor" />
+        <path d="M20 74V12" stroke="rgba(255,255,255,.55)" stroke-width="1.5" fill="none" />
+      </symbol>
+      <symbol id="cornerArt" viewBox="0 0 300 300">
+        <path d="M-10 36C70 70 120 28 190 78S270 170 292 262" fill="none" style="stroke:var(--leaf)" stroke-width="3"
+          stroke-linecap="round" />
+        <path d="M36 -10C70 70 28 120 78 190S170 270 262 292" fill="none" style="stroke:var(--leaf)" stroke-width="3"
+          stroke-linecap="round" />
+        <g style="color:var(--leaf)">
+          <use href="#leaf" x="98" y="16" width="24" height="48" transform="rotate(75 110 40)" />
+          <use href="#leaf" x="150" y="88" width="24" height="48" transform="rotate(150 162 112)" />
+          <use href="#leaf" x="214" y="132" width="22" height="44" transform="rotate(120 225 154)" />
+          <use href="#leaf" x="14" y="98" width="24" height="48" transform="rotate(165 26 122)" />
+          <use href="#leaf" x="84" y="150" width="24" height="48" transform="rotate(-25 96 174)" />
+          <use href="#leaf" x="60" y="222" width="22" height="44" transform="rotate(200 71 244)" />
+          <use href="#leaf" x="160" y="238" width="22" height="44" transform="rotate(100 171 260)" />
+          <use href="#leaf" x="250" y="170" width="20" height="40" transform="rotate(60 260 190)" />
+        </g>
+        <use href="#flower" x="0" y="0" width="112" height="112" style="color:var(--rose)" />
+        <use href="#flower" x="138" y="24" width="66" height="66" style="color:var(--peach)" />
+        <use href="#flower" x="24" y="140" width="66" height="66" style="color:var(--lav)" />
+        <use href="#flower" x="104" y="96" width="46" height="46" style="color:var(--butter)" />
+        <use href="#flower" x="226" y="96" width="42" height="42" style="color:var(--rose)" />
+        <use href="#flower" x="84" y="224" width="42" height="42" style="color:var(--peach)" />
+        <use href="#flower" x="248" y="208" width="36" height="36" style="color:var(--lav)" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Opening doors -->
+  <div class="gate" id="gate">
+    <div class="door l">
+      <div class="corner tl"><svg class="art" viewBox="0 0 300 300" aria-hidden="true">
+          <use href="#cornerArt" />
+        </svg></div>
+    </div>
+    <div class="door r">
+      <div class="corner tr"><svg class="art" viewBox="0 0 300 300" aria-hidden="true">
+          <use href="#cornerArt" />
+        </svg></div>
+    </div>
+    <div class="gate-center">
+      <div class="glow"></div>
+      <svg class="diya" viewBox="0 0 80 60" aria-hidden="true">
+        <path d="M6 30Q40 72 74 30Q40 40 6 30Z" style="fill:var(--gold)" />
+        <ellipse cx="40" cy="30" rx="26" ry="5" style="fill:var(--gold2)" />
+        <path class="flame" d="M40 2C51 15 49 26 40 28C31 26 29 15 40 2Z" fill="#ffb347" />
+        <path class="flame" d="M40 13C45 19 44 24 40 26C36 24 35 19 40 13Z" fill="#ffe08a" />
+      </svg>
+      <p class="invoke">Shree Ganeshaya Namah</p>
+      <h1 class="script">Shashwat &amp; Manya</h1>
+      <p>request the joy of your presence</p>
+      <button class="btn pulse" id="openBtn" type="button">Open Invitation</button>
+    </div>
+  </div>
+
+  <canvas id="petals" aria-hidden="true"></canvas>
+
+  <nav class="nav" aria-label="Sections">
+    <a href="#top">Home</a>
+    <a href="#events">Events</a>
+    <a href="#family">Family</a>
+    <a href="#venue">Venue</a>
+    <a href="#reception">Reception</a>
+    <!-- <a href="#reach">How to Reach</a> -->
+    <a href="#rsvp" class="cta">RSVP</a>
+    <button type="button" id="theme" aria-label="Switch light or dark mode">&#9680;</button>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <svg class="mandala" id="mandala" viewBox="-100 -100 200 200" aria-hidden="true"></svg>
+    <div class="blob a"></div>
+    <div class="blob b"></div>
+    <div class="blob c"></div>
+    <div class="corner tl"><svg class="art" viewBox="0 0 300 300" aria-hidden="true">
+        <use href="#cornerArt" />
+      </svg></div>
+    <div class="corner tr"><svg class="art" viewBox="0 0 300 300" aria-hidden="true">
+        <use href="#cornerArt" />
+      </svg></div>
+    <div class="corner bl"><svg class="art" viewBox="0 0 300 300" aria-hidden="true">
+        <use href="#cornerArt" />
+      </svg></div>
+    <div class="corner br"><svg class="art" viewBox="0 0 300 300" aria-hidden="true">
+        <use href="#cornerArt" />
+      </svg></div>
+
+    <div class="inner">
+      <div class="om-top rise" style="--i:0">ॐ</div>
+      <p class="invoke rise" style="--i:0.5">Shree Ganeshaya Namah</p>
+      <p class="with rise" style="--i:1">With the blessings of our families</p>
+      <h1 class="names script rise" style="--i:2"><span>Shashwat</span><span class="amp">&amp;</span><span>Manya</span>
+      </h1>
+      <p class="fullnames rise" style="--i:3">Shashwat Vijay &nbsp;·&nbsp; Manya Sinha</p>
+      <p class="msg rise" style="--i:4;margin-top:1.2rem">joyfully invite you to celebrate their wedding</p>
+      <div class="datebox rise" style="--i:5">
+        <div><b>28<sup>th</sup></b><small>JAN</small></div>
+        <span class="script" style="font-size:2rem;color:var(--gold)">&amp;</span>
+        <div><b>29<sup>th</sup></b><small>JAN</small></div>
+      </div>
+      <p class="place rise" style="--i:6">The Patricians, Tifra, Bilaspur, Chhattisgarh</p>
+      <p class="place rise" style="--i:6;margin-top:-1rem;font-size:.9rem">Reception · 29<sup>th</sup> JAN</p>
+      <div class="count rise" style="--i:7" id="count">
+        <div><b id="cd">00</b><span>Days</span></div>
+        <div><b id="ch">00</b><span>Hours</span></div>
+        <div><b id="cm">00</b><span>Minutes</span></div>
+        <div><b id="cs">00</b><span>Seconds</span></div>
+      </div>
+      <div class="actions rise" style="--i:8">
+        <a class="btn" href="https://forms.gle/ShyvtRmmvQ5dwwmA7" target="_blank" rel="noopener">RSVP Now</a>
+        <a class="btn ghost" href="#events">See the Events</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- EVENTS -->
+  <section id="events">
+    <div class="wrap center">
+      <p class="eyebrow reveal">Save the dates</p>
+      <h2 class="reveal">Two days of <span class="script">celebration</span></h2>
+      <div class="divider reveal"><span></span><svg viewBox="-50 -50 100 100" aria-hidden="true">
+          <use href="#flower" x="-50" y="-50" width="100" height="100" style="color:var(--rose)" />
+        </svg><span></span></div>
+      <p class="lead reveal">Tap each card to flip it and see the festive vibe for the day.</p>
+
+      <div class="day reveal">
+        <span class="num">28<sup>th</sup></span>
+        <div class="meta"><small>Thursday</small><strong>January</strong></div>
+        <!-- <em>Haldi &nbsp;·&nbsp; Mehndi &nbsp;·&nbsp; Sangeet</em> -->
+        <em>Haldi &nbsp;·&nbsp; Sangeet</em>
+      </div>
+
+      <div class="cards">
+        <div class="reveal" style="--d:0s">
+          <div class="flip haldi" role="button" tabindex="0" aria-pressed="false"
+            aria-label="Haldi ceremony. Tap to flip.">
+            <div class="in2">
+              <div class="face front">
+                <svg class="ico" viewBox="-50 -50 100 100" aria-hidden="true">
+                  <use href="#flower" x="-50" y="-50" width="100" height="100" style="color:#f6c945" />
+                </svg>
+                <h3>Phoolon Ki Haldi</h3>
+                <p>A golden glow and a shower of blooms.</p>
+                <span class="hint">Tap to flip</span>
+              </div>
+              <div class="face back">
+                <span class="k">Festive vibe</span>
+                <p>We cordially invite you to bless the couple at their Phoolon Ki Haldi ceremony.</p>
+                <span class="k" style="font-weight:600;letter-spacing:0.2em;margin-top:0.2rem">11:00 AM</span>
+                <span class="k">28<sup>th</sup> JAN · The Patricians</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" style="--d:.24s">
+          <div class="flip sangeet" role="button" tabindex="0" aria-pressed="false"
+            aria-label="Sangeet night. Tap to flip.">
+            <div class="in2">
+              <div class="face front">
+                <svg class="ico" viewBox="0 0 64 64" fill="none" stroke="#7a62b0" stroke-width="4"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="20" cy="48" r="7" fill="#7a62b0" />
+                  <circle cx="46" cy="42" r="7" fill="#7a62b0" />
+                  <path d="M27 48V16L53 10V42M27 24L53 18" />
+                </svg>
+                <h3>Sangeet</h3>
+                <p>An evening of songs, dance and family fun under the stars.</p>
+                <span class="hint">Tap to flip</span>
+              </div>
+              <div class="face back">
+                <span class="k">Festive vibe</span>
+                <p>Sitaron ki chhaon mein, suron ki ek haseen shaam. <br> Requesting the pleasure of your gracious
+                  presence at our Sangeet Celebration, as we toast to love, music, and new beginnings.</p>
+                <span class="k" style="font-weight:600;letter-spacing:0.2em;margin-top:0.2rem">6:00 PM</span>
+                <span class="k">28<sup>th</sup> JAN · The Patricians</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vivah reveal" role="button" tabindex="0" aria-pressed="false"
+        aria-label="The Wedding ceremony details. Tap to flip.">
+        <div class="vivah-inner">
+          <div class="vivah-face front">
+            <div class="corner tl"><svg class="art" viewBox="0 0 300 300" aria-hidden="true">
+                <use href="#cornerArt" />
+              </svg></div>
+            <div class="corner tr"><svg class="art" viewBox="0 0 300 300" aria-hidden="true">
+                <use href="#cornerArt" />
+              </svg></div>
+            <div class="day" style="position:relative;z-index:2">
+              <span class="num">29<sup>th</sup></span>
+              <div class="meta"><small>Friday</small><strong>January</strong></div>
+            </div>
+            <img class="hast-melap-img" src="public/wedding.png" alt="Wedding" />
+            <h3 class="script">The Wedding</h3>
+            <p>Mangal mantron ki goonj, apno ka aashirwad aur ek naye jevan ka aarambh. The Wedding Ceremony -
+              celebrating a divine milan of grace, saubhagya, and a lifetime of shared dreams.</p>
+            <p style="margin-bottom:0.5rem"><b style="font-weight:500">The Patricians · Tifra, Bilaspur,
+                Chhattisgarh</b></p>
+            <span class="hint" style="position:relative;z-index:2;display:block;margin-top:0.6rem;">Tap to view Day's
+              Events</span>
+          </div>
+
+          <div class="vivah-face back">
+            <div class="corner bl"><svg class="art" viewBox="0 0 300 300" aria-hidden="true">
+                <use href="#cornerArt" />
+              </svg></div>
+            <div class="corner br"><svg class="art" viewBox="0 0 300 300" aria-hidden="true">
+                <use href="#cornerArt" />
+              </svg></div>
+            <h3 class="script" style="font-size:2.8rem;margin-bottom:0.2rem">Day's Events</h3>
+            <p style="font-size:0.9rem;color:var(--muted);margin-top:0">Join us for the auspicious rituals &amp;
+              celebrations</p>
+            <ul class="wedding-schedule">
+              <li>
+                <span class="time">9:00 AM</span>
+                <span class="event-name">Baraat Parchhawan</span>
+              </li>
+              <li>
+                <span class="time">5:00 PM</span>
+                <span class="event-name">Baraat Prasthan</span>
+              </li>
+              <li>
+                <span class="time">7:00 PM</span>
+                <span class="event-name">Jaimala</span>
+              </li>
+              <li>
+                <span class="time">12:00 AM</span>
+                <span class="event-name">Phere Onward</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAMILY & BLESSINGS -->
+  <section id="family">
+    <div class="wrap center">
+      <p class="eyebrow reveal">Family &amp; Blessings</p>
+      <h2 class="reveal">With Love from <span class="script">Our Family</span></h2>
+      <div class="divider reveal">
+        <span></span>
+        <svg viewBox="-50 -50 100 100" aria-hidden="true">
+          <use href="#flower" x="-50" y="-50" width="100" height="100" style="color:var(--rose)" />
+        </svg>
+        <span></span>
+      </div>
+      <p class="lead reveal">Blessed by the elders and cheered on by loved ones.</p>
+
+      <div class="family-grid">
+        <!-- Grandparents -->
+        <div class="family-card reveal" style="--d:0s">
+          <span class="badge">Elders &amp; Blessings</span>
+          <div class="family-shots">
+            <div class="shot-circle" title="Late Dr. Vidyasagar Gupta">
+              <img src="images/dadaji.jpg" alt="Late Dr. Vidyasagar Gupta"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="ph-avatar" style="display:none">VG</div>
+            </div>
+            <div class="shot-circle" title="Late Smt. Janak Nandini Gupta">
+              <img src="images/dadiji.jpg" alt="Late Smt. Janak Nandini Gupta"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="ph-avatar" style="display:none">JG</div>
+            </div>
+          </div>
+          <h3>Late Dr. Vidyasagar Gupta</h3>
+          <h3>&amp; Late Smt. Janak Nandini Gupta</h3>
+          <p class="relation">Dadaji &amp; Dadiji</p>
+        </div>
+
+        <!-- Parents -->
+        <div class="family-card reveal" style="--d:.1s">
+          <span class="badge">Mummy &amp; Papa</span>
+          <div class="family-shots">
+            <div class="shot-circle" title="Alok Surya">
+              <img src="images/father.jpg" alt="Alok Surya"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="ph-avatar" style="display:none">AS</div>
+            </div>
+            <div class="shot-circle" title="Indu Surya">
+              <img src="images/mother.jpg" alt="Indu Surya"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="ph-avatar" style="display:none">IS</div>
+            </div>
+          </div>
+          <h3>Shri Alok Surya</h3>
+          <h3>&amp; Smt. Indu Surya</h3>
+          <p class="relation">Mummy &amp; Papa</p>
+        </div>
+
+        <!-- Uncle & Aunty -->
+        <div class="family-card reveal" style="--d:.2s">
+          <span class="badge">Kaku &amp; Kaki</span>
+          <div class="family-shots">
+            <div class="shot-circle" title="Prakash Gupta">
+              <img src="images/uncle.jpg" alt="Prakash Gupta"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="ph-avatar" style="display:none">PG</div>
+            </div>
+            <div class="shot-circle" title="Rekha Gupta">
+              <img src="images/aunty.jpg" alt="Rekha Gupta"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="ph-avatar" style="display:none">RG</div>
+            </div>
+          </div>
+          <h3>Shri Prakash Gupta</h3>
+          <h3>&amp; Smt. Rekha Gupta</h3>
+          <p class="relation">Kaku &amp; Kaki</p>
+        </div>
+
+        <!-- Didi & Jijaji -->
+        <div class="family-card reveal" style="--d:.3s">
+          <span class="badge">Sister &amp; Jijaji</span>
+          <div class="family-shots">
+            <div class="shot-circle" title="Dr. Vigya Gupta">
+              <img src="images/sister.jpg" alt="Dr. Vigya Gupta"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="ph-avatar" style="display:none">VG</div>
+            </div>
+            <div class="shot-circle" title="Dr. Himanshu Rathi">
+              <img src="images/jijaji.jpg" alt="Dr. Himanshu Rathi"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="ph-avatar" style="display:none">HR</div>
+            </div>
+          </div>
+          <h3>Dr. Vigya Gupta</h3>
+          <h3>&amp; Dr. Himanshu Rathi</h3>
+          <p class="relation">Didi &amp; Jijaji</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENUE -->
+  <section id="venue">
+    <div class="wrap venue">
+      <svg class="venue-art reveal" viewBox="0 0 400 300" role="img"
+        aria-label="Illustration of a flower-decorated wedding mandap">
+        <defs>
+          <linearGradient id="vsky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#fde3ea" />
+            <stop offset="1" stop-color="#fff2df" />
+          </linearGradient>
+        </defs>
+        <rect width="400" height="300" fill="url(#vsky)" />
+        <circle class="sun" cx="200" cy="130" r="80" style="fill:var(--butter)" opacity=".6" />
+        <path d="M0 255Q90 225 200 248T400 240V300H0Z" style="fill:var(--sage)" />
+        <ellipse cx="200" cy="262" rx="90" ry="12" style="fill:var(--lav)" opacity=".8" />
+        <rect x="112" y="120" width="9" height="140" rx="4" style="fill:var(--gold)" />
+        <rect x="279" y="120" width="9" height="140" rx="4" style="fill:var(--gold)" />
+        <path d="M90 124Q200 26 310 124Z" style="fill:var(--rose);stroke:var(--gold)" stroke-width="3" />
+        <path d="M200 44V28" style="stroke:var(--gold)" stroke-width="3" />
+        <circle cx="200" cy="24" r="6" style="fill:var(--gold)" />
+        <g class="garland">
+          <path d="M118 126Q160 176 200 126Q240 176 282 126" fill="none" style="stroke:var(--peach)" stroke-width="8"
+            stroke-linecap="round" stroke-dasharray="1 10" />
+          <path d="M118 140Q160 190 200 140Q240 190 282 140" fill="none" style="stroke:var(--lav)" stroke-width="6"
+            stroke-linecap="round" stroke-dasharray="1 9" />
+        </g>
+        <use href="#flower" x="96" y="108" width="38" height="38" style="color:var(--peach)" />
+        <use href="#flower" x="266" y="108" width="38" height="38" style="color:var(--peach)" />
+        <use href="#flower" x="181" y="230" width="38" height="38" style="color:var(--rose)" />
+        <use href="#flower" x="130" y="238" width="26" height="26" style="color:var(--butter)" />
+        <use href="#flower" x="244" y="238" width="26" height="26" style="color:var(--butter)" />
+      </svg>
+      <div class="reveal" style="--d:.15s">
+        <p class="eyebrow">The venue</p>
+        <h2>Where we'll <span class="script">celebrate</span></h2>
+        <address>
+          <strong>The Patricians</strong>
+          Tifra, Bilaspur, Chhattisgarh, India
+        </address>
+        <div class="actions">
+          <a class="btn" href="https://maps.app.goo.gl/z2uXEBCTDJa4bMiT9?g_st=ic" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
+            </svg>
+            Open in Google Maps
+          </a>
+          <a class="btn ghost"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Shashwat+%26+Manya+Wedding+Celebrations&amp;dates=20270128/20270130&amp;location=The+Patricians%2C+Tifra%2C+Bilaspur%2C+Chhattisgarh&amp;details=Wedding+Celebrations+on+28+and+29+January+2027."
+            target="_blank" rel="noopener">Add to Calendar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECEPTION -->
+  <section id="reception">
+    <div class="wrap venue">
+      <svg class="venue-art reveal" viewBox="0 0 400 300" role="img"
+        aria-label="Illustration of a flower-decorated reception hall">
+        <defs>
+          <linearGradient id="rsky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#e9defa" />
+            <stop offset="1" stop-color="#fdeee0" />
+          </linearGradient>
+        </defs>
+        <rect width="400" height="300" fill="url(#rsky)" />
+        <circle cx="330" cy="60" r="46" style="fill:var(--butter)" opacity=".55" />
+        <path d="M0 250Q100 220 200 244T400 236V300H0Z" style="fill:var(--lav)" opacity=".85" />
+        <rect x="60" y="120" width="280" height="120" rx="14" style="fill:var(--card-solid);stroke:var(--gold)"
+          stroke-width="3" />
+        <path d="M60 120Q200 66 340 120" fill="none" style="stroke:var(--gold)" stroke-width="3" />
+        <path d="M60 120Q200 66 340 120" fill="none" style="stroke:var(--rose)" stroke-width="8" stroke-linecap="round"
+          stroke-dasharray="1 12" opacity=".85" />
+        <rect x="86" y="150" width="34" height="80" rx="3" style="fill:var(--sky)" opacity=".7" />
+        <rect x="283" y="150" width="34" height="80" rx="3" style="fill:var(--sky)" opacity=".7" />
+        <path d="M150 230V170q20-16 40 0v60" fill="none" style="stroke:var(--gold)" stroke-width="3" />
+        <use href="#flower" x="180" y="220" width="40" height="40" style="color:var(--rose)" />
+        <use href="#flower" x="70" y="204" width="28" height="28" style="color:var(--peach)" />
+        <use href="#flower" x="302" y="204" width="28" height="28" style="color:var(--peach)" />
+        <use href="#flower" x="20" y="252" width="26" height="26" style="color:var(--lav)" />
+        <use href="#flower" x="354" y="252" width="26" height="26" style="color:var(--lav)" />
+        <path d="M15 118 25 130 15 142 5 130Z" style="fill:var(--butter)">
+          <animate attributeName="opacity" values=".4;1;.4" dur="2.4s" repeatCount="indefinite" />
+        </path>
+        <path d="M385 200 395 212 385 224 375 212Z" style="fill:var(--gold2)">
+          <animate attributeName="opacity" values="1;.4;1" dur="2.8s" repeatCount="indefinite" />
+        </path>
+      </svg>
+      <div class="reveal" style="--d:.15s">
+        <p class="eyebrow">One more celebration</p>
+        <h2>Wedding <span class="script">Reception</span></h2>
+        <p class="lead" style="margin:0 0 1.4rem">Join us to celebrate the newlyweds at our reception evening.</p>
+        <div class="day" style="justify-content:flex-start;margin-bottom:1rem">
+          <span class="num">29<sup>th</sup></span>
+          <div class="meta"><small>Friday</small><strong>January</strong></div>
+        </div>
+        <address>
+          <strong>The Patricians</strong>
+          Tifra, Bilaspur, Chhattisgarh, India
+        </address>
+        <div class="actions">
+          <a class="btn" href="https://maps.app.goo.gl/z2uXEBCTDJa4bMiT9?g_st=ic" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" />
+            </svg>
+            Open in Google Maps
+          </a>
+          <a class="btn ghost"
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Shashwat+%26+Manya+Reception&amp;dates=20270129/20270130&amp;location=Sumiran+Resort%2C+Ambikapur%2C+Chhattisgarh&amp;details=Wedding+reception+evening+on+29+January+2027."
+            target="_blank" rel="noopener">Add to Calendar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WATER FUN & POOL PARTY (FULL SCREEN CARTOON VIEW) -->
+  <div id="waterfun-view" role="dialog" aria-modal="true" aria-label="Water Fun & Pool Party">
+    <canvas id="water-bubbles"></canvas>
+    <div class="wf-close-bar" style="position:relative;z-index:10">
+      <button type="button" class="wf-back-btn" id="closeWaterFun">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        Back to Invitation
+      </button>
+      <div class="water-badge" style="margin:0">🌴 Chill &amp; Splash Celebration 🌴</div>
+    </div>
+
+    <div class="wrap" style="max-width:960px;position:relative;z-index:5">
+      <div class="center" style="margin-bottom:1.5rem">
+        <h2 class="water-title">Water Fun &amp; <span class="script" style="color:#fef08a">Pool Party</span></h2>
+        <p class="lead" style="max-width:640px;color:#e0f2fe;margin-bottom:1.8rem">Beat the heat! Dive into an afternoon
+          of pool slides, splash games, cooling drinks, and energetic music with family &amp; friends!</p>
+      </div>
+
+      <!-- MAIN SCENE CARD -->
+      <div class="water-card">
+        <!-- Cartoon Water Park SVG Illustration -->
+        <svg class="water-park-art" viewBox="0 0 500 280" role="img"
+          aria-label="Cartoon water park scene with pool slides and palm trees">
+          <defs>
+            <linearGradient id="wpSky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#bae6fd" />
+              <stop offset="100%" stop-color="#e0f2fe" />
+            </linearGradient>
+            <linearGradient id="wpPool" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#38bdf8" />
+              <stop offset="100%" stop-color="#0284c7" />
+            </linearGradient>
+          </defs>
+
+          <!-- Sky & Sun -->
+          <rect width="500" height="280" rx="24" fill="url(#wpSky)" />
+          <circle cx="430" cy="50" r="34" fill="#fde047" stroke="#eab308" stroke-width="3" />
+
+          <!-- Palm Trees -->
+          <path d="M60 210 Q70 140 95 100" fill="none" stroke="#92400e" stroke-width="8" stroke-linecap="round" />
+          <path d="M95 100 Q60 85 45 105 M95 100 Q95 70 85 60 M95 100 Q120 70 140 85 M95 100 Q130 105 145 125"
+            fill="none" stroke="#22c55e" stroke-width="7" stroke-linecap="round" />
+
+          <!-- Water slide -->
+          <path d="M370 70 Q320 60 270 110 T170 180" fill="none" stroke="#fb7185" stroke-width="18"
+            stroke-linecap="round" />
+          <path d="M370 70 Q320 60 270 110 T170 180" fill="none" stroke="#f43f5e" stroke-width="4"
+            stroke-dasharray="8 8" stroke-linecap="round" />
+          <rect x="360" y="60" width="22" height="150" fill="#facc15" rx="4" />
+          <rect x="350" y="55" width="42" height="12" fill="#ef4444" rx="4" />
+
+          <!-- Pool Base -->
+          <path d="M30 200 Q250 160 470 200 L470 260 Q250 280 30 260 Z" fill="url(#wpPool)" />
+          <!-- Water ripples -->
+          <path d="M60 215 Q150 205 240 215 T420 215" fill="none" stroke="#bae6fd" stroke-width="3"
+            stroke-linecap="round" opacity="0.8" />
+          <path d="M90 235 Q180 225 270 235 T440 235" fill="none" stroke="#e0f2fe" stroke-width="3"
+            stroke-linecap="round" opacity="0.7" />
+
+          <!-- Beach ball -->
+          <circle cx="140" cy="225" r="16" fill="#f43f5e" />
+          <path d="M124 225 A16 16 0 0 1 156 225 Z" fill="#38bdf8" />
+          <ellipse cx="140" cy="225" rx="6" ry="16" fill="#facc15" />
+          <circle cx="140" cy="225" r="4" fill="#fff" />
+
+          <!-- Cartoon Duck Float -->
+          <circle cx="310" cy="215" r="14" fill="#facc15" />
+          <path d="M318 212 Q326 210 322 216 Z" fill="#fb923c" />
+          <circle cx="314" cy="211" r="1.5" fill="#0f172a" />
+          <ellipse cx="304" cy="220" rx="14" ry="7" fill="#facc15" />
+        </svg>
+
+        <div class="water-details">
+          <div class="water-pill">
+            <strong>🗓️ Date</strong>
+            <span>29 January 2027</span>
+          </div>
+          <div class="water-pill">
+            <strong>⏰ Time</strong>
+            <span>11:00 AM - 04:00 PM</span>
+          </div>
+          <div class="water-pill">
+            <strong>📍 Venue</strong>
+            <span>The Patricians Pool Zone</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTIVITIES CARDS -->
+      <div class="act-grid">
+        <div class="act-card c-blue">
+          <div class="act-icon">🛝</div>
+          <h3>Giant Water Slides</h3>
+          <p>Speed down thrilling cartoon water chutes and make the biggest splash with family &amp; friends!</p>
+        </div>
+        <div class="act-card c-coral">
+          <div class="act-icon">🏐</div>
+          <h3>Water Volleyball</h3>
+          <p>Team Bride vs. Team Groom! Bring your game face for high-energy pool volleyball and water polo battles.</p>
+        </div>
+        <div class="act-card c-green">
+          <div class="act-icon">🍹</div>
+          <h3>Poolside Cocktails &amp; DJ</h3>
+          <p>Chill beats, energetic Punjabi hits, tender coconut coolers, and delicious finger bites right beside the
+            pool.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- HOW TO REACH
+<section id="reach">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow reveal">Travel guide</p>
+      <h2 class="reveal">How to reach <span class="script">Hindaun City</span></h2>
+      <div class="divider reveal"><span></span><svg viewBox="-50 -50 100 100" aria-hidden="true"><use href="#flower" x="-50" y="-50" width="100" height="100" style="color:var(--lav)"/></svg><span></span></div>
+      <p class="lead reveal">Hindaun City is well connected to Delhi. Choose how you would like to travel.</p>
+    </div>
+
+    <div class="chips reveal">
+      <div class="chip"><small>Recommended airport</small><b>Delhi (DEL)</b></div>
+      <div class="chip"><small>Other nearby airport</small><b>Agra (AGR)</b></div>
+      <div class="chip"><small>Delhi → Hindaun by train</small><b>≈ 3 hours</b></div>
+      <div class="chip"><small>Delhi → Hindaun by road</small><b>≈ 4 hours</b></div>
+    </div>
+
+    <div class="tabs reveal" role="tablist" aria-label="Travel options">
+      <button role="tab" aria-selected="true" data-mode="air" type="button">By Air</button>
+      <button role="tab" aria-selected="false" data-mode="train" type="button">By Train</button>
+      <button role="tab" aria-selected="false" data-mode="road" type="button">By Road</button>
+    </div>
+
+    <div class="mapbox reveal">
+      <svg class="route" id="route" data-mode="air" viewBox="0 0 640 300" role="img" aria-label="Simple map: Delhi and Agra to Hindaun City">
+        <path class="pathalt" d="M118 244C260 268 400 214 520 154"/>
+        <path id="mainpath" class="pathmain" d="M92 66C250 30 330 236 520 154"/>
+        <circle cx="92" cy="66" r="9" style="fill:var(--rose);stroke:var(--gold)" stroke-width="2"/>
+        <text x="92" y="42" text-anchor="middle" font-size="16" font-weight="500">Delhi</text>
+        <circle cx="118" cy="244" r="7" style="fill:var(--lav);stroke:var(--gold)" stroke-width="2"/>
+        <text x="118" y="272" text-anchor="middle" font-size="14">Agra</text>
+        <circle cx="520" cy="154" r="26" style="fill:var(--rose)" opacity=".35"><animate attributeName="r" values="18;30;18" dur="3s" repeatCount="indefinite"/></circle>
+        <use href="#flower" x="502" y="136" width="36" height="36" style="color:var(--peach)"/>
+        <text x="520" y="206" text-anchor="middle" font-size="17" font-weight="500">Hindaun City</text>
+        <text x="520" y="226" text-anchor="middle" font-size="12" style="fill:var(--muted)">The Patricians</text>
+        <g>
+          <circle r="16" style="fill:var(--card-solid);stroke:var(--gold)" stroke-width="2"/>
+          <g data-g="air"><path d="M0-9L2-3 9 2V4L2 2 1.5 7 4 9V10L0 9-4 10V9L-1.5 7-2 2-9 4V2L-2-3Z" style="fill:var(--gold)"/></g>
+          <g data-g="train"><rect x="-6" y="-9" width="12" height="15" rx="3" style="fill:var(--gold)"/><rect x="-4" y="-6" width="8" height="5" rx="1" style="fill:var(--card-solid)"/><circle cx="-3" cy="3" r="1.3" style="fill:var(--card-solid)"/><circle cx="3" cy="3" r="1.3" style="fill:var(--card-solid)"/><path d="M-5 8L-7 10M5 8L7 10" style="stroke:var(--gold)" stroke-width="1.5"/></g>
+          <g data-g="road"><path d="M-9 4L-8-2-4-5H4L8-2 9 4Z" style="fill:var(--gold)"/><circle cx="-5" cy="5" r="2.2" style="fill:var(--ink)"/><circle cx="5" cy="5" r="2.2" style="fill:var(--ink)"/></g>
+          <animateMotion id="travel" dur="7s" repeatCount="indefinite"><mpath href="#mainpath"/></animateMotion>
+        </g>
+      </svg>
+      <div class="panel" id="panel">
+        <h3 id="ptitle"></h3>
+        <p id="ptext"></p>
+      </div>
+    </div>
+  </div>
+</section>
+-->
+
+  <!-- RSVP -->
+  <section id="rsvp">
+    <div class="wrap">
+      <div class="rsvp reveal">
+        <div class="corner tl"><svg class="art" viewBox="0 0 300 300" aria-hidden="true">
+            <use href="#cornerArt" />
+          </svg></div>
+        <div class="corner tr"><svg class="art" viewBox="0 0 300 300" aria-hidden="true">
+            <use href="#cornerArt" />
+          </svg></div>
+        <svg class="env" viewBox="0 0 120 90" aria-hidden="true">
+          <rect x="6" y="14" width="108" height="70" rx="8" style="fill:var(--card-solid);stroke:var(--gold)"
+            stroke-width="2" />
+          <path d="M8 18L60 56 112 18" fill="none" style="stroke:var(--gold)" stroke-width="2" />
+          <use href="#flower" x="44" y="34" width="32" height="32" style="color:var(--rose)" />
+        </svg>
+        <p class="eyebrow" style="position:relative;z-index:2">Kindly respond</p>
+        <h2 style="position:relative;z-index:2">Will you <span class="script">join us?</span></h2>
+        <p>Your presence will make our celebrations complete. Please let us know if you can make it by filling in the
+          RSVP form.</p>
+        <a class="btn pulse" href="https://forms.gle/ShyvtRmmvQ5dwwmA7" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 21s-7.5-4.6-9.6-9.2C1 8.6 2.9 5 6.3 5c2 0 3.3 1.1 4.2 2.4.3.4.9.4 1.2 0C12.6 6.1 14 5 16 5c3.4 0 5.3 3.6 3.9 6.8C19.5 16.4 12 21 12 21z" />
+          </svg>
+          RSVP Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="corner bl"><svg class="art" viewBox="0 0 300 300" aria-hidden="true">
+        <use href="#cornerArt" />
+      </svg></div>
+    <div class="corner br"><svg class="art" viewBox="0 0 300 300" aria-hidden="true">
+        <use href="#cornerArt" />
+      </svg></div>
+    <p class="eyebrow" style="position:relative;z-index:2">With love and blessings</p>
+    <h2 class="names script" style="position:relative;z-index:2"><span>Shashwat</span><span
+        class="amp">&amp;</span><span>Manya</span></h2>
+    <p style="position:relative;z-index:2">28<sup>th</sup> &amp; 29<sup>th</sup> January · The Patricians, Tifra,
+      Bilaspur, Chhattisgarh</p>
+    <p style="position:relative;z-index:2">Reception · 29<sup>th</sup> January</p>
+  </footer>
+
+  <button class="btn fab" id="fabWaterFun" type="button" title="Fun Activity">
+    <span>Fun Activity</span>
+  </button>
+
+  <!-- Water Splash Overlay with Cartoon Animation -->
+  <div id="water-splash-overlay">
+    <svg class="splash-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M 0,50 Q 150,0 300,50 T 600,50 T 900,50 T 1200,50 L 1200,120 L 0,120 Z"></path>
+    </svg>
+    <svg class="splash-wave w2" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M 0,65 Q 150,20 300,65 T 600,65 T 900,65 T 1200,65 L 1200,120 L 0,120 Z"></path>
+    </svg>
+    <svg class="splash-wave w3" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M 0,75 Q 150,35 300,75 T 600,75 T 900,75 T 1200,75 L 1200,120 L 0,120 Z"></path>
+    </svg>
+    <div class="drops-cluster" id="splashDropsBox"></div>
+    <div class="splash-char">
+      <!-- Cartoon Duck Ring SVG -->
+      <svg class="splash-tube" viewBox="0 0 200 200">
+        <defs>
+          <radialGradient id="ringGrad2" cx="40%" cy="35%" r="60%">
+            <stop offset="0%" stop-color="#fde047" />
+            <stop offset="70%" stop-color="#eab308" />
+            <stop offset="100%" stop-color="#ca8a04" />
+          </radialGradient>
+        </defs>
+        <ellipse cx="100" cy="165" rx="75" ry="18" fill="#38bdf8" opacity="0.7" />
+        <path d="M40 125 C40 85, 160 85, 160 125 C160 160, 40 160, 40 125 Z" fill="url(#ringGrad2)" stroke="#a16207"
+          stroke-width="4" />
+        <ellipse cx="100" cy="125" rx="34" ry="16" fill="#0284c7" />
+        <circle cx="100" cy="70" r="32" fill="#facc15" stroke="#a16207" stroke-width="4" />
+        <circle cx="82" cy="78" r="6" fill="#fb7185" opacity="0.8" />
+        <circle cx="118" cy="78" r="6" fill="#fb7185" opacity="0.8" />
+        <ellipse cx="90" cy="62" rx="7" ry="10" fill="#fff" stroke="#0f172a" stroke-width="2.5" />
+        <circle cx="92" cy="62" r="4.5" fill="#0f172a" />
+        <circle cx="94" cy="59" r="1.5" fill="#fff" />
+        <ellipse cx="110" cy="62" rx="7" ry="10" fill="#fff" stroke="#0f172a" stroke-width="2.5" />
+        <circle cx="108" cy="62" r="4.5" fill="#0f172a" />
+        <circle cx="110" cy="59" r="1.5" fill="#fff" />
+        <path d="M85 75 Q100 62 115 75 Q100 90 85 75 Z" fill="#fb923c" stroke="#c2410c" stroke-width="3" />
+        <path d="M72 60 Q100 48 128 60" fill="none" stroke="#0284c7" stroke-width="4" />
+        <circle cx="88" cy="60" r="13" fill="none" stroke="#0284c7" stroke-width="3.5" />
+        <circle cx="112" cy="60" r="13" fill="none" stroke="#0284c7" stroke-width="3.5" />
+      </svg>
+      <h2 class="splash-heading">Splash Time! 💦</h2>
+      <div class="splash-subtext">Water Park &amp; Pool Party Fun</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var body = document.body;
+      body.classList.add('locked');
+
+      /* Mandala */
+      var m = document.getElementById('mandala'), s = '', i;
+      for (i = 0; i < 16; i++) { s += '<ellipse cx="0" cy="-62" rx="9" ry="26" transform="rotate(' + (i * 22.5) + ')"/>'; }
+      for (i = 0; i < 8; i++) { s += '<ellipse cx="0" cy="-38" rx="7" ry="16" transform="rotate(' + (i * 45 + 22.5) + ')"/>'; }
+      m.innerHTML = '<g fill="none" stroke="currentColor" stroke-width="0.8">' + s + '<circle r="96"/><circle r="90" stroke-dasharray="2 4"/><circle r="26"/><circle r="8"/><text x="0" y="3.5" text-anchor="middle" dominant-baseline="middle" font-size="9" fill="currentColor" stroke="none" font-family="serif">ॐ</text></g>';
+
+      /* Gate */
+      var gate = document.getElementById('gate');
+      var started = false;
+      function openGate() {
+        if (started) return; started = true;
+        window.scrollTo(0, 0);
+        gate.classList.add('open');
+        body.classList.add('go');
+        startPetals();
+        setTimeout(function () {
+          gate.classList.add('gone');
+          body.classList.remove('locked');
+          window.scrollTo(0, 0);
+        }, reduce ? 50 : 1750);
+      }
+      document.getElementById('openBtn').addEventListener('click', openGate);
+
+      /* Countdown to 29 JAN 2027 (IST) */
+      var target = new Date('2027-01-29T00:00:00+05:30').getTime();
+      var cd = document.getElementById('cd'), ch = document.getElementById('ch'), cm = document.getElementById('cm'), cs = document.getElementById('cs');
+      function pad(n) { return n < 10 ? '0' + n : '' + n; }
+      function tick() {
+        var d = target - Date.now();
+        if (d <= 0) { document.getElementById('count').innerHTML = '<p class="celebrate">The celebrations have begun!</p>'; clearInterval(timer); return; }
+        var days = Math.floor(d / 864e5), h = Math.floor(d % 864e5 / 36e5), mi = Math.floor(d % 36e5 / 6e4), se = Math.floor(d % 6e4 / 1e3);
+        cd.textContent = pad(days); ch.textContent = pad(h); cm.textContent = pad(mi); cs.textContent = pad(se);
+      }
+      var timer = setInterval(tick, 1000); tick();
+
+      /* Scroll reveal */
+      var rev = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+        rev.forEach(function (el) { io.observe(el); });
+      } else { rev.forEach(function (el) { el.classList.add('in'); }); }
+
+      /* Flip cards */
+      document.querySelectorAll('.flip, .vivah').forEach(function (card) {
+        function toggle() { var on = card.classList.toggle('on'); card.setAttribute('aria-pressed', on); }
+        card.addEventListener('click', toggle);
+        card.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+      });
+
+      /* Travel tabs
+      var info = {
+        air:{t:'By Air', p:'Fly into <b>Delhi (DEL)</b>, the recommended airport with the best flight connections. <b>Agra (AGR)</b> is the other nearby airport. From either airport, continue to Hindaun City by train or by road.', dur:'8s'},
+        train:{t:'By Train', p:'Hindaun City is about <b>3 hours from Delhi by train</b>. Get off at Hindaun City railway station and take a local cab to The Patricians.', dur:'5s'},
+        road:{t:'By Road', p:'Hindaun City is about <b>4 hours from Delhi by road</b>. Drive yourself or book a cab, and use the Google Maps link in the Venue section for the final stretch.', dur:'6.5s'}
+      };
+      var route = document.getElementById('route'), travel = document.getElementById('travel');
+      var pt = document.getElementById('ptitle'), px = document.getElementById('ptext');
+      function setMode(mode){
+        if(!route || !travel || !pt || !px) return;
+        route.setAttribute('data-mode', mode);
+        pt.textContent = info[mode].t; px.innerHTML = info[mode].p;
+        travel.setAttribute('dur', info[mode].dur);
+        document.querySelectorAll('.tabs button').forEach(function(b){ b.setAttribute('aria-selected', b.getAttribute('data-mode') === mode ? 'true' : 'false'); });
+      }
+      document.querySelectorAll('.tabs button').forEach(function(b){
+        b.addEventListener('click', function(){ setMode(b.getAttribute('data-mode')); });
+      });
+      if(route && travel && pt && px) setMode('air');
+      */
+
+      /* Theme toggle (defaults to light mode initially, saves preference) */
+      var themeBtn = document.getElementById('theme');
+      var savedTheme = localStorage.getItem('wedding_theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+
+      if (themeBtn) {
+        themeBtn.addEventListener('click', function () {
+          var r = document.documentElement;
+          var cur = r.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+          var next = cur === 'dark' ? 'light' : 'dark';
+          r.setAttribute('data-theme', next);
+          localStorage.setItem('wedding_theme', next);
+        });
+      }
+
+      /* Water Fun Splash Overlay & Dedicated View Trigger */
+      var splashOverlay = document.getElementById('water-splash-overlay');
+      var splashDropsBox = document.getElementById('splashDropsBox');
+      var waterFunView = document.getElementById('waterfun-view');
+      var closeWaterFunBtn = document.getElementById('closeWaterFun');
+
+      function makeWaterDrops() {
+        if (!splashDropsBox) return;
+        splashDropsBox.innerHTML = '';
+        for (var i = 0; i < 36; i++) {
+          var d = document.createElement('div');
+          d.className = 'water-drop';
+          var angle = Math.random() * Math.PI * 2;
+          var dist = 80 + Math.random() * 240;
+          var tx = Math.cos(angle) * dist + 'px';
+          var ty = Math.sin(angle) * dist + 'px';
+          d.style.setProperty('--tx', tx);
+          d.style.setProperty('--ty', ty);
+          d.style.left = '50%';
+          d.style.top = '48%';
+          d.style.animationDelay = (Math.random() * 0.25) + 's';
+          splashDropsBox.appendChild(d);
+        }
+      }
+
+      function openWaterFunView() {
+        makeWaterDrops();
+        if (splashOverlay) splashOverlay.classList.add('active');
+        setTimeout(function () {
+          if (waterFunView) {
+            waterFunView.classList.add('open');
+            waterFunView.scrollTop = 0;
+          }
+          body.classList.add('locked');
+          if (splashOverlay) splashOverlay.classList.remove('active');
+          if (window.startBubbleLoop) window.startBubbleLoop();
+        }, 2000);
+      }
+
+      function closeWaterFunView() {
+        if (waterFunView) {
+          waterFunView.classList.remove('open');
+        }
+        body.classList.remove('locked');
+      }
+
+      var fabBtn = document.getElementById('fabWaterFun');
+      if (fabBtn) {
+        fabBtn.addEventListener('click', openWaterFunView);
+
+        // Show button only after scrolling past the top hero section
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 300) {
+            fabBtn.classList.add('visible');
+          } else {
+            fabBtn.classList.remove('visible');
+          }
+        }, { passive: true });
+      }
+
+      var navWf = document.getElementById('navWaterFun');
+      if (navWf) {
+        navWf.addEventListener('click', function (e) {
+          e.preventDefault();
+          openWaterFunView();
+        });
+      }
+
+      if (closeWaterFunBtn) {
+        closeWaterFunBtn.addEventListener('click', closeWaterFunView);
+      }
+
+      /* Floating Bubbles Canvas for Water Fun View */
+      var bubbleCanvas = document.getElementById('water-bubbles');
+      if (bubbleCanvas) {
+        var bctx = bubbleCanvas.getContext('2d'), bW, bH, bubbles = [], bubblesRunning = false;
+        function resizeBubbles() {
+          bW = bubbleCanvas.width = window.innerWidth;
+          bH = bubbleCanvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeBubbles);
+        resizeBubbles();
+
+        function getBubbleSpawnZone() {
+          var cards = document.querySelectorAll('.act-card');
+          if (cards && cards.length > 0) {
+            var lowestBottom = 0;
+            for (var c = 0; c < cards.length; c++) {
+              var r = cards[c].getBoundingClientRect();
+              if (r.bottom > lowestBottom) lowestBottom = r.bottom;
+            }
+            if (lowestBottom > 0) {
+              return lowestBottom;
+            }
+          }
+          var acts = document.querySelector('.pool-activities');
+          if (acts) {
+            return acts.getBoundingClientRect().bottom;
+          }
+          return bH;
+        }
+
+        function createBubble() {
+          var baseBottom = getBubbleSpawnZone();
+          var r = 8 + Math.random() * 24;
+          return {
+            x: Math.random() * bW,
+            // Spawn strictly below the cards so no bubble cuts across or appears in the middle of them
+            y: baseBottom + r + 15 + Math.random() * 60,
+            r: r,
+            vy: 1.5 + Math.random() * 2.8,
+            vx: (Math.random() - 0.5) * 0.8,
+            wobble: Math.random() * 6.28,
+            wobbleSpeed: 0.02 + Math.random() * 0.03
+          };
+        }
+
+        function initBubbles() {
+          bubbles = [];
+          for (var bi = 0; bi < 85; bi++) {
+            bubbles.push(createBubble());
+          }
+        }
+        initBubbles();
+
+        function drawBubbles() {
+          if (!waterFunView || !waterFunView.classList.contains('open')) {
+            bubblesRunning = false;
+            return;
+          }
+          if (bW !== window.innerWidth || bH !== window.innerHeight) {
+            resizeBubbles();
+          }
+          bctx.clearRect(0, 0, bW, bH);
+          for (var i = 0; i < bubbles.length; i++) {
+            var b = bubbles[i];
+            b.wobble += b.wobbleSpeed;
+            b.y -= b.vy;
+            b.x += b.vx + Math.sin(b.wobble) * 0.7;
+
+            // When bubble reaches the top or screen boundaries, respawn strictly below the cards
+            if (b.y < -50 || b.x < -40 || b.x > bW + 40) {
+              var baseBottom = getBubbleSpawnZone();
+              b.y = baseBottom + b.r + 15 + Math.random() * 60;
+              b.x = Math.random() * bW;
+              b.r = 8 + Math.random() * 24;
+              b.vy = 1.5 + Math.random() * 2.8;
+            }
+
+            bctx.save();
+            bctx.beginPath();
+            bctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+            bctx.fillStyle = 'rgba(255, 255, 255, 0.28)';
+            bctx.fill();
+            bctx.strokeStyle = '#ffffff';
+            bctx.lineWidth = 2.5;
+            bctx.stroke();
+
+            // Inner light cyan glow ring
+            bctx.beginPath();
+            bctx.arc(b.x, b.y, b.r * 0.85, 0, Math.PI * 2);
+            bctx.strokeStyle = 'rgba(125, 211, 252, 0.75)';
+            bctx.lineWidth = 1.8;
+            bctx.stroke();
+
+            // Bright white shine highlight
+            bctx.beginPath();
+            bctx.arc(b.x - b.r * 0.35, b.y - b.r * 0.35, b.r * 0.28, 0, Math.PI * 2);
+            bctx.fillStyle = '#ffffff';
+            bctx.fill();
+
+            // Secondary bottom glint
+            bctx.beginPath();
+            bctx.arc(b.x + b.r * 0.32, b.y + b.r * 0.32, b.r * 0.14, 0, Math.PI * 2);
+            bctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            bctx.fill();
+
+            bctx.restore();
+          }
+          requestAnimationFrame(drawBubbles);
+        }
+
+        function startBubbleLoop() {
+          resizeBubbles();
+          initBubbles();
+          if (!bubblesRunning) {
+            bubblesRunning = true;
+            requestAnimationFrame(drawBubbles);
+          }
+        }
+        window.startBubbleLoop = startBubbleLoop;
+
+        var origOpen = openWaterFunView;
+        openWaterFunView = function () {
+          origOpen();
+          startBubbleLoop();
+        };
+      }
+
+      /* Falling petals */
+      var canvas = document.getElementById('petals'), ctx = canvas.getContext('2d'), W, H, dpr, petals = [], running = false;
+      var cols = ['#f5b8c4', '#ffd5b8', '#fbe8a3', '#d8cbef', '#f9d0da', '#ffe4cf'];
+      function size() { dpr = Math.min(window.devicePixelRatio || 1, 2); W = window.innerWidth; H = window.innerHeight; canvas.width = W * dpr; canvas.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+      function make(init) {
+        return {
+          x: Math.random() * W, y: init ? Math.random() * H : -20, s: 6 + Math.random() * 9, vy: .45 + Math.random() * .9, vx: -.25 + Math.random() * .5,
+          a: Math.random() * 6.28, va: (Math.random() - .5) * .035, sw: Math.random() * 6.28, c: cols[Math.floor(Math.random() * cols.length)], o: .55 + Math.random() * .35
+        };
+      }
+      function frame() {
+        ctx.clearRect(0, 0, W, H);
+        for (var k = 0; k < petals.length; k++) {
+          var p = petals[k];
+          p.sw += .02; p.x += p.vx + Math.sin(p.sw) * .55; p.y += p.vy; p.a += p.va;
+          if (p.y > H + 24 || p.x < -30 || p.x > W + 30) { petals[k] = make(false); continue; }
+          ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a); ctx.globalAlpha = p.o; ctx.fillStyle = p.c;
+          ctx.beginPath(); ctx.moveTo(0, -p.s); ctx.quadraticCurveTo(p.s * .95, -p.s * .2, 0, p.s); ctx.quadraticCurveTo(-p.s * .95, -p.s * .2, 0, -p.s); ctx.fill(); ctx.restore();
+        }
+        requestAnimationFrame(frame);
+      }
+      function startPetals() {
+        if (reduce || running) return; running = true;
+        size(); var n = Math.min(34, Math.max(14, Math.floor(W / 30)));
+        for (var k = 0; k < n; k++) petals.push(make(true));
+        frame();
+      }
+      window.addEventListener('resize', function () { if (running) size(); });
+    })();
+  </script>
+</body>
+
+</html>
